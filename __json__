@@ -1,0 +1,75 @@
+{
+    "app/main.py": {
+        "description": "Main entry point for the FastAPI application. Sets up the FastAPI server, defines routes, and starts the server.",
+        "dependencies": {
+            "app/app_config.py": [
+                "app_config"
+            ],
+            "app/models.py": [
+                "Note"
+            ],
+            "app/routers/notes.py": [
+                "notes_router"
+            ]
+        }
+    },
+    "app/app_config.py": {
+        "description": "Configuration file for the application, containing the database configuration.",
+        "exposes": [
+            "app_config"
+        ]
+    },
+    "app/models.py": {
+        "description": " Defines the Note model using SQLAlchemy ORM.",
+        "dependencies": {
+            "app/app_config.py": [
+                "app_config"
+            ]
+        },
+        "exposes": [
+            "Note"
+        ]
+    },
+    "app/routers/notes.py": {
+        "description": "Defines routes for CRUD operations on Notes.",
+        "dependencies": {
+            "app/models.py": [
+                "Note"
+            ]
+        },
+        "exposes": [
+            "notes_router"
+        ]
+    },
+    "app/schemas.py": {
+        "description": "Defines Pydantic models for Note data validation.",
+        "dependencies": {
+            "app/models.py": [
+                "Note"
+            ]
+        },
+        "exposes": [
+            "NoteSchema"
+        ]
+    },
+    "app/database.py": {
+        "description": "Sets up the database connection using SQLAlchemy ORM.",
+        "dependencies": {
+            "app/app_config.py": [
+                "app_config"
+            ]
+        }
+    },
+    "sqlalchemy.ext.asyncio engines.py": {
+        "description": "Async engine for interacting with PostgreSQL database."
+    },
+    "requirements.txt": {
+        "description": "List of dependencies required for the project."
+    },
+    "README.md": {
+        "description": "README with basic documentation and 'how to run' guide."
+    },
+    ".gitignore": {
+        "description": ".gitignore with node-modules and cache files."
+    }
+}
