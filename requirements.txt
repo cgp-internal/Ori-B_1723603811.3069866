@@ -1,0 +1,10 @@
+fastapi==0.70.0
+sqlalchemy==1.4.25
+pydantic==1.9.1
+async-timeout==4.0.2
+uvicorn[standard]==0.15.0
+psycopg2-binary==2.9.3
+app-config @ file://app/app_config.py
+Note @ file://app/models.py
+notes-router @ file://app/routers/notes.py
+NoteSchema @ file://app/schemas.py
